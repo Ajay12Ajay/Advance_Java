@@ -1,0 +1,53 @@
+package com.rays.returns;
+
+import com.rays.Marksheet.MarksheetBean;
+import com.rays.Marksheet.MarksheetModal;
+
+public class TestMarksheetModal {
+
+	public static void main(String[] args) throws Exception {
+		testAdd();
+		// testUpdate();
+		// testDelete();
+		// testFindByPk();
+		// testFindByRollNo();
+		// testSearch();
+
+	}
+
+	public static void testAdd() throws Exception {
+		MarksheetBean bean = new MarksheetBean();
+		// bean.setId(6);
+		bean.setRoll_no(107);
+		bean.setName("Ram");
+		bean.setPhysics(77);
+		bean.setChemistry(77);
+		bean.setMaths(77);
+
+		MarksheetModal modal = new MarksheetModal();
+		modal.add(bean);
+
+	}
+
+	public static void testUpdate() throws Exception {
+		MarksheetBean bean = new MarksheetBean();
+		bean.setId(5);
+		bean.setRoll_no(1055);
+		bean.setName("Laxman");
+		bean.setPhysics(55);
+		bean.setChemistry(55);
+		bean.setMaths(55);
+
+		MarksheetModal modal = new MarksheetModal();
+		modal.update(bean);
+
+	}
+
+	public static void testDelete() throws Exception {
+
+		MarksheetModal modal = new MarksheetModal();
+		modal.delete(5);
+
+	}
+
+}

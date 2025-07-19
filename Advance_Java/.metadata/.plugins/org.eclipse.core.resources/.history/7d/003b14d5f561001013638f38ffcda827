@@ -1,0 +1,165 @@
+package com.rays.role;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.rays.user.UserBean;
+
+public class RoleModel {
+
+	public Integer nextPk() throws Exception {
+		int pk = 0;
+
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/adv_java", "root", "root");
+
+		PreparedStatement pstmt = conn.prepareStatement("select max(id) from role ");
+		ResultSet rs = pstmt.executeQuery();
+
+		while (rs.next()) {
+			pk = rs.getInt(1);
+
+		}
+		return pk + 1;
+
+	}
+
+	public void add(RoleBean bean) throws Exception {
+
+		int pk = nextPk();
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/adv_java", "root", "root");
+		PreparedStatement pstmt = conn.prepareStatement("insert into role values (?,?,?)");
+
+		pstmt.setInt(1, pk);
+		pstmt.setString(2, bean.getName());
+		pstmt.setString(3, bean.getDescription());
+
+		int i = pstmt.executeUpdate();
+		System.out.println("Data inserted : " + i);
+
+	}
+
+	public void update(RoleBean bean) throws Exception {
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/adv_java", "root", "root");
+		PreparedStatement pstmt = conn.prepareStatement("update role set name = ? ,description = ? where id = ?");
+		pstmt.setString(1, bean.getName());
+		pstmt.setString(2, bean.getDescription());
+		pstmt.setInt(3, bean.getId());
+
+		int i = pstmt.executeUpdate();
+		System.out.println("Data updated : " + i);
+
+	}
+
+	public void delete(RoleBean bean) throws Exception {
+
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/adv_java", "root", "root");
+		PreparedStatement pstmt = conn.prepareStatement("delete from role where id = ?");
+		pstmt.setInt(1, bean.getId());
+		int i = pstmt.executeUpdate();
+		System.out.println("Data deleted : " + i);
+
+	}
+
+	public RoleBean findByPk(int id) throws Exception {
+
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/adv_java", "root", "root");
+
+		PreparedStatement pstmt = conn.prepareStatement("select * from role where id =? ");
+		pstmt.setInt(1, id);
+
+		ResultSet rs = pstmt.executeQuery();
+
+		RoleBean bean = null;
+
+		while (rs.next()) {
+
+			bean = new RoleBean();
+
+			bean.setId(rs.getInt(1));
+			bean.setName(rs.getString(2));
+			bean.setDescription(rs.getString(3));
+
+		}
+		return bean;
+	}
+
+	public RoleBean findByName(String name) throws Exception {
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/adv_java", "root", "root");
+
+		PreparedStatement pstmt = conn.prepareStatement("select * from role where name = ? ");
+		pstmt.setString(1, name);
+		ResultSet rs = pstmt.executeQuery();
+
+		RoleBean bean = null;
+
+		while (rs.next()) {
+			bean = new RoleBean();
+
+			bean.setId(rs.getInt(1));
+			bean.setName(rs.getString(2));
+			bean.setDescription(rs.getString(3));
+
+		}
+		return bean;
+
+	}
+
+	public List search(RoleBean bean, int pageNo, int pageSize) throws Exception {
+
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		Connection conn = DriverManager.getConnection("jdbc:mysql::/localhost:3306/adv_java", "root", "root");
+
+		StringBuffer sql = new StringBuffer("select * from role where 1=1 ");
+
+		if (bean != null) {
+
+			if (bean.getId() > 0) {
+				sql.append(" and id = " + bean.getId());
+			}
+			if (bean.getName() != null && bean.getName().length() > 0) {
+				sql.append(" and name like '" + bean.getName() + "%'");
+			}
+			if (bean.getDescription() != null && bean.getDescription().length() > 0) {
+				sql.append(" and description like '" + bean.getDescription() + "%'");
+			}
+
+		}
+
+		if (pageSize > 0) {
+			pageNo = (pageNo - 1) * pageSize;
+			sql.append(" limit " + pageNo + "," + pageSize);
+		}
+
+		System.out.println("sql :>" + sql);
+
+		PreparedStatement pstmt = conn.prepareStatement(sql.toString());
+		ResultSet rs = pstmt.executeQuery();
+
+		List list = new ArrayList();
+
+		while (rs.next()) {
+
+			bean = new RoleBean();
+
+			bean.setId(rs.getInt(1));
+			bean.setName(rs.getString(2));
+			bean.setDescription(rs.getString(3));
+
+			list.add(bean);
+		}
+
+		return list;
+
+	}
+
+}

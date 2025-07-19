@@ -1,0 +1,77 @@
+package com.rays.user;
+
+import java.text.SimpleDateFormat;
+
+public class TestUserModel {
+	public static void main(String[] args) throws Exception {
+		// testAdd();
+		// testUpdate();
+		// testDelete();
+		testFindByPk();
+
+	}
+
+	public static void testAdd() throws Exception {
+
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+		UserBean bean = new UserBean();
+
+		bean.setFirstNAme("Aniket ");
+		bean.setLastName("Rajput");
+		bean.setLogin_id("aniket@gmail.com");
+		bean.setPassword("333");
+		bean.setDob(sdf.parse("16/07/1990"));
+		bean.setAddress("Bhopal");
+
+		UserModel model = new UserModel();
+		model.add(bean);
+
+	}
+
+	public static void testUpdate() throws Exception {
+
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+
+		UserBean bean = new UserBean();
+
+		bean.setFirstNAme("Ram");
+		bean.setLastName("Singh");
+		bean.setLogin_id("ram@gmail.com");
+		bean.setPassword("123");
+		bean.setDob(sdf.parse("15/07/2025"));
+		bean.setAddress("Indore");
+		bean.setId(2);
+
+		UserModel model = new UserModel();
+		model.update(bean);
+
+	}
+
+	public static void testDelete() throws Exception {
+
+		UserModel model = new UserModel();
+		model.delete(2);
+
+	}
+
+	public static void testFindByPk() throws Exception {
+		UserModel model = new UserModel();
+
+		UserBean bean = model.findById(2);
+
+		if (bean != null) {
+			System.out.print("\t" + bean.getId());
+			System.out.print("\t" + bean.getFirstNAme());
+			System.out.print("\t" + bean.getLastName());
+			System.out.print("\t" + bean.getLogin_id());
+			System.out.print("\t" + bean.getPassword());
+			System.out.print("\t" + bean.getDob());
+			System.out.println("\t" + bean.getAddress());
+
+		} else {
+			System.out.println("id not found ");
+		}
+
+	}
+
+}

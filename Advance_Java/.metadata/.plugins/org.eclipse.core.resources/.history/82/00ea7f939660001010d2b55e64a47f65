@@ -1,0 +1,43 @@
+package com.rays.role;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+public class RoleModel {
+
+	public Integer nextPk() throws Exception {
+		int pk = 0;
+
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/adv_java", "root", "root");
+
+		PreparedStatement pstmt = conn.prepareStatement("select max(id) from role ");
+		ResultSet rs = pstmt.executeQuery();
+
+		while (rs.next()) {
+			pk = rs.getInt(1);
+
+		}
+		return pk + 1;
+
+	}
+
+	public void add() throws Exception {
+
+		int pk = nextPk();
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/adv_java", "root", "root");
+		PreparedStatement pstmt = conn.prepareStatement("insert into role values (?,?,?)");
+
+		pstmt.setInt(1, pk);
+		pstmt.setString(2, "");
+		pstmt.setString(3, "");
+
+		int i = pstmt.executeUpdate();
+		System.out.println("Data inserted : " + i);
+
+	}
+
+}

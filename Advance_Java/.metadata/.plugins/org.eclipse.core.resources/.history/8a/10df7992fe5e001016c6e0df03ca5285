@@ -1,0 +1,33 @@
+package com.rays.Marksheet;
+
+public class MarksheetModal {
+
+	public void nextPk() throws Exception {
+
+	}
+
+	public void add() throws Exception {
+
+	}
+
+	public void update() throws Exception {
+
+	}
+
+	public void delete() throws Exception {
+
+	}
+
+	public void search() throws Exception {
+
+	}
+
+	public void findByPk() throws Exception {
+
+	}
+
+	public void findByRollNo() throws Exception {
+
+	}
+
+}

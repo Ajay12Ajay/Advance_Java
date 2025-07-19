@@ -1,0 +1,22 @@
+package com.rays.dynamic.role;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+
+public class DynamicAdd {
+	public static void main(String[] args) throws Exception {
+		add1();
+	}
+
+	public static void add1() throws Exception {
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/adv_java", "root", "root");
+
+		PreparedStatement pstmt = conn.prepareStatement("insert into role values(1,'Ram','HR')");
+		int i = pstmt.executeUpdate();
+		System.out.println("Data inserted :> " + i);
+
+	}
+
+}

@@ -1,0 +1,98 @@
+package com.rays.role;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+public class RoleModel {
+
+	public Integer nextPk() throws Exception {
+		int pk = 0;
+
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/adv_java", "root", "root");
+
+		PreparedStatement pstmt = conn.prepareStatement("select max(id) from role ");
+		ResultSet rs = pstmt.executeQuery();
+
+		while (rs.next()) {
+			pk = rs.getInt(1);
+
+		}
+		return pk + 1;
+
+	}
+
+	public void add(RoleBean bean) throws Exception {
+
+		int pk = nextPk();
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/adv_java", "root", "root");
+		PreparedStatement pstmt = conn.prepareStatement("insert into role values (?,?,?)");
+
+		pstmt.setInt(1, pk);
+		pstmt.setString(2, bean.getName());
+		pstmt.setString(3, bean.getDescription());
+
+		int i = pstmt.executeUpdate();
+		System.out.println("Data inserted : " + i);
+
+	}
+
+	public void update(RoleBean bean) throws Exception {
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/adv_java", "root", "root");
+		PreparedStatement pstmt = conn.prepareStatement("update role set name = ? ,description = ? where id = ?");
+		pstmt.setString(1, bean.getName());
+		pstmt.setString(2, bean.getDescription());
+		pstmt.setInt(3, bean.getId());
+
+		int i = pstmt.executeUpdate();
+		System.out.println("Data updated : " + i);
+
+	}
+
+	public void delete(RoleBean bean) throws Exception {
+
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/adv_java", "root", "root");
+		PreparedStatement pstmt = conn.prepareStatement("delete from role where id = ?");
+		pstmt.setInt(1, bean.getId());
+		int i = pstmt.executeUpdate();
+		System.out.println("Data deleted : " + i);
+
+	}
+
+	public void findByPk(int id) throws Exception {
+
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/adv_java", "root", "root");
+
+		PreparedStatement pstmt = conn.prepareStatement("select * from role where id =? ");
+		pstmt.setInt(1, id);
+		ResultSet rs = pstmt.executeQuery();
+		while (rs.next()) {
+			System.out.print("\t" + rs.getInt(1));
+			System.out.print("\t" + rs.getString(2));
+			System.out.println("\t" + rs.getString(3));
+
+		}
+	}
+
+	public void findByName(String name) throws Exception {
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/adv_java", "root", "root");
+
+		PreparedStatement pstmt = conn.prepareStatement("select * from role where name = ? ");
+		pstmt.setString(1, name);
+		ResultSet rs = pstmt.executeQuery();
+		while (rs.next()) {
+			System.out.print("\t" + rs.getInt(1));
+			System.out.print("\t" + rs.getString(2));
+			System.out.println("\t" + rs.getString(3));
+
+		}
+
+	}
+}

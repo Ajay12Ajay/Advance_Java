@@ -1,0 +1,56 @@
+package com.rays.user;
+
+import java.text.SimpleDateFormat;
+
+public class TestUserModel {
+	public static void main(String[] args) throws Exception {
+		 testAdd();
+		// testUpdate();
+		//testDelete();
+
+	}
+
+	public static void testAdd() throws Exception {
+
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+		UserBean bean = new UserBean();
+
+		bean.setFirstNAme("Malay ");
+		bean.setLastName("Dongre");
+		bean.setLogin_id("malay@gmail.com");
+		bean.setPassword("222");
+		bean.setDob(sdf.parse("12/07/1990"));
+		bean.setAddress("Ujjain");
+
+		UserModel model = new UserModel();
+		model.add(bean);
+
+	}
+
+	public static void testUpdate() throws Exception {
+
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+
+		UserBean bean = new UserBean();
+
+		bean.setFirstNAme("Ram");
+		bean.setLastName("Singh");
+		bean.setLogin_id("ram@gmail.com");
+		bean.setPassword("123");
+		bean.setDob(sdf.parse("15/07/2025"));
+		bean.setAddress("Indore");
+		bean.setId(2);
+
+		UserModel model = new UserModel();
+		model.update(bean);
+
+	}
+
+	public static void testDelete() throws Exception {
+		
+		UserModel model = new UserModel();
+		model.delete(2);
+
+	}
+
+}

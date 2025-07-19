@@ -1,0 +1,71 @@
+package com.rays.user;
+
+import java.util.Date;
+
+public class UserBean {
+
+	private int id;
+	private String firstNAme;
+	private String lastName;
+	private String login_id;
+	private String password;
+	private Date dob;
+	private String address;
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getFirstNAme() {
+		return firstNAme;
+	}
+
+	public void setFirstNAme(String firstNAme) {
+		this.firstNAme = firstNAme;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public String getLogin_id() {
+		return login_id;
+	}
+
+	public void setLogin_id(String login_id) {
+		this.login_id = login_id;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public Date getDob() {
+		return dob;
+	}
+
+	public void setDob(Date dob) {
+		this.dob = dob;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+}

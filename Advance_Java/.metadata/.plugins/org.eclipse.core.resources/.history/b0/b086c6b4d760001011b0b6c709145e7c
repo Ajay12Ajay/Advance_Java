@@ -1,0 +1,35 @@
+package com.rays.role;
+
+public class TestRoleModel {
+
+	public static void main(String[] args) throws Exception {
+
+		//testAdd();
+		testUpdate();
+
+	}
+
+	public static void testAdd() throws Exception {
+
+		RoleBean bean = new RoleBean();
+		bean.setId(1);
+		bean.setName("Ram");
+		bean.setDescription("HR");
+
+		RoleModel model = new RoleModel();
+		model.add(bean);
+
+	}
+
+	public static void testUpdate() throws Exception {
+		RoleBean bean = new RoleBean();
+		bean.setId(2);
+		bean.setName("Ajay");
+		bean.setDescription("Developer");
+
+		RoleModel model = new RoleModel();
+		model.update(bean);
+		
+	}
+
+}

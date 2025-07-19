@@ -1,0 +1,21 @@
+package com.rays.dynamic.role;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+
+public class DynamicDelete {
+	public static void main(String[] args) throws Exception {
+		delete1();
+	}
+
+	public static void delete1() throws Exception {
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/adv_java", "root", "root");
+		PreparedStatement pstmt = conn.prepareStatement("delete from role where id = 4");
+		int i = pstmt.executeUpdate();
+		System.out.println("Data deleted" + i);
+
+	}
+
+}

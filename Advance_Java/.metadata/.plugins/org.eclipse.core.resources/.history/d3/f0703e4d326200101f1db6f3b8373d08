@@ -1,0 +1,31 @@
+package com.rays.student;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+
+public class TestStudentModel {
+	public static void main(String[] args) throws Exception {
+
+		testAdd();
+
+	}
+
+	public static void testAdd() throws Exception {
+
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+
+		StudentBean bean = new StudentBean();
+		// bean.setId(id);
+		bean.setFirstName("Malay");
+		bean.setLastName("Dongre");
+		bean.setDob(sdf.parse("12/12/1990"));
+		bean.setGender("male");
+		bean.setMobileNo("9876543219");
+		bean.setEmail("malay@gmail.com");
+		bean.setCollegeName("Indore University");
+
+		StudentModel model = new StudentModel();
+		model.add(bean);
+	}
+
+}

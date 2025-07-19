@@ -1,0 +1,23 @@
+package com.rays.student;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+import com.rays.jdbc.util.JDBCDataSource;
+
+public class StudentModel {
+
+	public static Integer getNextPk() throws Exception {
+		int pk = 0;
+		Connection conn = JDBCDataSource.getConnection();
+		PreparedStatement pstmt = conn.prepareStatement("select max(id) from student");
+		ResultSet rs = pstmt.executeQuery();
+		while (rs.next()) {
+			pk = (rs.getInt(1));
+		}
+		return pk + 1;
+
+	}
+
+}
