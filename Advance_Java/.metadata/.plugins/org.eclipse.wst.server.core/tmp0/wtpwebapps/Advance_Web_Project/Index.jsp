@@ -8,14 +8,14 @@
 </head>
 
 <body>
-
+	<%@  include file="Header.jsp"%>
 	<br>
 	<br>
 	<br>
 	<br>
 	<div align="center">
 		<h1>
-			<a href="UserRegistrationCtl">WELCOME TO DYNAMIC WEB </a>
+			<a href="LoginCtl">WELCOME TO DYNAMIC WEB </a>
 		</h1>
 
 	</div>

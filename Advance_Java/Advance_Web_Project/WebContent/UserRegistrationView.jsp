@@ -9,7 +9,7 @@
 <body>
 	<div align="center">
 		<form action="UserRegistrationCtl" method="post">
-			<h1>User Registration "</h1>
+			<h1>User Registration </h1>
 			<table>
 				<tr>
 					<th>First Name</th>
@@ -32,8 +32,29 @@
 					<td><input type="date" name="dob"></td>
 				</tr>
 				<tr>
-					<th>Address</th>
-					<td><input type="text" name="address"></td>
+					<th>Mobile No</th>
+					<td><input type="text" name="mobileNo"></td>
+				</tr>
+				<tr>
+					<th>Role Id</th>
+					<td><input type="text" name="roleId"></td>
+				</tr>
+				<tr>
+					<th>Gender</th>
+					<td><input type="text" name="gender"></td>
+				</tr>
+				<tr>
+					<td><input type="hidden" name="createdBy"></td>
+				</tr>
+				<tr>
+
+					<td><input type="hidden" name="modifiedBy"></td>
+				</tr>
+				<tr>
+					<td><input type="hidden" name="createdDatetime"></td>
+				</tr>
+				<tr>
+					<td><input type="hidden" name="createdDatetime"></td>
 				</tr>
 				<tr>
 					<th></th>

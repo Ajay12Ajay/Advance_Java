@@ -8,14 +8,6 @@
 </head>
 <body>
 
-	<%
-		for (int i = 0; i <= 5; i++) {
-	%>
 
-	<h3>hello</h3>
-
-	<%
-		}
-	%>
 </body>
 </html>
