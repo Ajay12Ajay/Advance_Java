@@ -14,10 +14,10 @@ import in.co.rays.model.UserModel;
 
 @WebServlet("/LoginCtl")
 public class LoginCtl extends HttpServlet {
+
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		resp.sendRedirect("LoginView.jsp");
-
 	}
 
 	@Override
@@ -25,43 +25,34 @@ public class LoginCtl extends HttpServlet {
 
 		String loginId = req.getParameter("loginId");
 		String password = req.getParameter("password");
-		String operation = req.getParameter("operation");
+		String op = req.getParameter("operation");
 
-		if (operation.equalsIgnoreCase("signIn")) {
-
+		if (op.equalsIgnoreCase("signIn")) {
 			UserModel model = new UserModel();
 
 			try {
 				UserBean bean = model.authenticate(loginId, password);
 
 				if (bean != null) {
+					
 					req.setAttribute("user", bean);
-					System.out.println("Check out Id pw");
-
 					RequestDispatcher rd = req.getRequestDispatcher("Welcome.jsp");
 					rd.forward(req, resp);
-
+					
 				} else {
-
-					req.setAttribute("error", "Login Id and Password Invalid");
-					System.out.println("Login failed");
-
+					req.setAttribute("error", "Login & Password Invalid");
+					RequestDispatcher rd = req.getRequestDispatcher("LoginView.jsp");
+					rd.forward(req, resp);
 				}
-
 			} catch (Exception e) {
-
 				e.printStackTrace();
 			}
 
-		} else if (operation.equalsIgnoreCase("signUp")) {
-			System.out.println(operation);
+		} else if (op.equalsIgnoreCase("signUp")) {
 			resp.sendRedirect("UserRegistrationCtl");
 			return;
 		}
 
-		RequestDispatcher rd = req.getRequestDispatcher("LoginView.jsp");
-		rd.forward(req, resp);
-
+		resp.sendRedirect("LoginView.jsp");
 	}
-
 }

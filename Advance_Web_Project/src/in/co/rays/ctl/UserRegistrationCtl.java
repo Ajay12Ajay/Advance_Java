@@ -1,10 +1,9 @@
+
 package in.co.rays.ctl;
 
 import java.io.IOException;
-import java.sql.Timestamp;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -21,9 +20,7 @@ public class UserRegistrationCtl extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
 		resp.sendRedirect("UserRegistrationView.jsp");
-
 	}
 
 	@Override
@@ -36,51 +33,31 @@ public class UserRegistrationCtl extends HttpServlet {
 		String loginId = req.getParameter("loginId");
 		String password = req.getParameter("password");
 		String dob = req.getParameter("dob");
-		String mobileNo = req.getParameter("mobileNo");
-		String roleId = req.getParameter("roleId");
-		String gender = req.getParameter("gender");
-
-		System.out.println("First Name :" + firstName);
-		System.out.println("Last Name :" + lastName);
-		System.out.println("Login Id :" + loginId);
-		System.out.println("Password :" + password);
-		System.out.println("DOB :" + dob);
-		System.out.println("Mobile No :" + mobileNo);
-		System.out.println("Role Id :" + roleId);
-		System.out.println("Gender :" + gender);
+		String address = req.getParameter("address");
 
 		UserBean bean = new UserBean();
 		bean.setFirstName(firstName);
 		bean.setLastName(lastName);
-		bean.setLogin(loginId);
+		bean.setLoginId(loginId);
 		bean.setPassword(password);
 		try {
 			bean.setDob(sdf.parse(dob));
 		} catch (ParseException e) {
-
 			e.printStackTrace();
 		}
-		bean.setMobileNo(mobileNo);
-		bean.setRoleId(Long.parseLong(roleId));
-		bean.setGender(gender);
-		bean.setCreatedBy("Admin");
-		bean.setModifiedBy("Admin");
-		bean.setCreatedDatetime(new Timestamp(new Date().getTime()));
-		bean.setModifiedDatetime(new Timestamp(new Date().getTime()));
+		bean.setAddress(address);
 
 		UserModel model = new UserModel();
+
 		try {
 			model.add(bean);
-			req.setAttribute("success", "User Added successfully....!");
+			req.setAttribute("success", "User added successfully..!!");
 		} catch (Exception e) {
-
 			e.printStackTrace();
-			req.setAttribute("error", "Login Id already exists.....!");
+			req.setAttribute("error", "Login Id already exist..!!");
 		}
 
-		RequestDispatcher rd = req.getRequestDispatcher("UserRegistrationCtl");
+		RequestDispatcher rd = req.getRequestDispatcher("UserRegistrationView.jsp");
 		rd.forward(req, resp);
-
 	}
-
 }

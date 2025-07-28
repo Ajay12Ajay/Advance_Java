@@ -86,3 +86,25 @@ Jul 28, 2025 15:05:34.78 [10700:1608:0728/150534.781:ERROR:google_apis\gcm\engin
 Jul 28, 2025 15:07:19.00 [10700:11856:0728/150719.002:ERROR:mojo\public\cpp\bindings\lib\interface_endpoint_client.cc:732] Message 1 rejected by interface blink.mojom.WidgetHost
 Jul 28, 2025 15:08:34.88 [10700:1608:0728/150834.885:ERROR:google_apis\gcm\engine\registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
 Jul 28, 2025 15:14:56.24 [10700:1608:0728/151456.248:ERROR:google_apis\gcm\engine\registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+
+Jul 28, 2025 16:16:28.94 NEW SESSION
+Jul 28, 2025 16:16:28.94 WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+Jul 28, 2025 16:16:28.96 I0000 00:00:1753699588.883558    3392 voice_transcription.cc:58] Registering VoiceTranscriptionCapability
+Jul 28, 2025 16:16:29.12 [8032:5952:0728/161629.123:ERROR:google_apis\gcm\engine\registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+Jul 28, 2025 16:16:29.22 Created TensorFlow Lite XNNPACK delegate for CPU.
+Jul 28, 2025 16:16:29.22 Attempting to use a delegate that only supports static-sized tensors with a graph that has dynamic-sized tensors (tensor#-1 is a dynamic-sized tensor).
+Jul 28, 2025 16:17:01.30 [8032:5952:0728/161701.308:ERROR:google_apis\gcm\engine\registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+Jul 28, 2025 16:17:48.85 [8032:5952:0728/161748.856:ERROR:google_apis\gcm\engine\registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+Jul 28, 2025 16:19:47.93 [8032:5952:0728/161947.932:ERROR:google_apis\gcm\engine\registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+Jul 28, 2025 16:23:12.57 [8032:5952:0728/162312.506:ERROR:google_apis\gcm\engine\registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+Jul 28, 2025 16:29:24.01 [8032:5952:0728/162924.014:ERROR:google_apis\gcm\engine\registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+Jul 28, 2025 16:47:45.57 WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+Jul 28, 2025 16:47:45.57 I0000 00:00:1753701465.571953    3076 voice_transcription.cc:58] Registering VoiceTranscriptionCapability
+Jul 28, 2025 16:47:45.87 Created TensorFlow Lite XNNPACK delegate for CPU.
+Jul 28, 2025 16:47:45.87 Attempting to use a delegate that only supports static-sized tensors with a graph that has dynamic-sized tensors (tensor#-1 is a dynamic-sized tensor).
+Jul 28, 2025 16:47:46.75 [12116:11340:0728/164746.750:ERROR:google_apis\gcm\engine\registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+Jul 28, 2025 16:48:15.09 [12116:11340:0728/164815.094:ERROR:google_apis\gcm\engine\registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+Jul 28, 2025 16:48:57.64 [12116:11340:0728/164857.642:ERROR:google_apis\gcm\engine\registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+Jul 28, 2025 16:50:50.11 [12116:11340:0728/165050.114:ERROR:google_apis\gcm\engine\registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+Jul 28, 2025 16:54:47.63 [12116:11340:0728/165447.637:ERROR:google_apis\gcm\engine\registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+Jul 28, 2025 17:01:56.56 [12116:11340:0728/170156.564:ERROR:google_apis\gcm\engine\registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT

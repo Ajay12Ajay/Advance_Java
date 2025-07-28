@@ -38,7 +38,7 @@
 			}
 		%>
 		<form action="UserRegistrationCtl" method="post">
-			
+
 			<table>
 				<tr>
 					<th>First Name</th>
@@ -61,30 +61,10 @@
 					<td><input type="date" name="dob"></td>
 				</tr>
 				<tr>
-					<th>Mobile No</th>
-					<td><input type="text" name="mobileNo"></td>
+					<th>Address</th>
+					<td><input type="text" name="address"></td>
 				</tr>
-				<tr>
-					<th>Role Id</th>
-					<td><input type="text" name="roleId"></td>
-				</tr>
-				<tr>
-					<th>Gender</th>
-					<td><input type="text" name="gender"></td>
-				</tr>
-				<tr>
-					<td><input type="hidden" name="createdBy"></td>
-				</tr>
-				<tr>
 
-					<td><input type="hidden" name="modifiedBy"></td>
-				</tr>
-				<tr>
-					<td><input type="hidden" name="createdDatetime"></td>
-				</tr>
-				<tr>
-					<td><input type="hidden" name="createdDatetime"></td>
-				</tr>
 				<tr>
 					<th></th>
 					<td><input type="submit" name="signUp"></td>

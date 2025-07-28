@@ -33,3 +33,5 @@
 2025-07-28 15:41:14,324 [Worker-22: Debug Source Lookup] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-catalina/9.0.48/tomcat-catalina-9.0.48-sources.jar
 2025-07-28 15:41:16,063 [Worker-27: Debug Source Lookup] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-util/9.0.48/tomcat-util-9.0.48-sources.jar
 2025-07-28 15:41:16,733 [Worker-27: Debug Source Lookup] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-util/9.0.48/tomcat-util-9.0.48-sources.jar
+2025-07-28 15:57:08,029 [Worker-1: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2025-07-28 15:59:50,699 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
