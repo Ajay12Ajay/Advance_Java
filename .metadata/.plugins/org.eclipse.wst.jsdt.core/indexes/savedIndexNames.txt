@@ -1,0 +1,8 @@
+INDEX VERSION 1.4+H:\RAYS TECHNOLOGIES\Advance_Java\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+3053300902.index
+206229633.index
+1144249936.index
+3530242311.index
+3431307677.index
+1744450889.index
+2779295742.index

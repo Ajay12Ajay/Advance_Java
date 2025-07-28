@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.sql.Statement"/>
+    <fullyQualifiedTypeName name="com.mysql.cj.jdbc.Driver"/>
+    <fullyQualifiedTypeName name="java.sql.SQLException"/>
+    <fullyQualifiedTypeName name="sun.security.action.GetIntegerAction"/>
+    <fullyQualifiedTypeName name="java.lang.ClassNotFoundException"/>
+    <fullyQualifiedTypeName name="com.rays.dynamic.MarksheetBean"/>
+    <fullyQualifiedTypeName name="java.lang.Readable"/>
+    <fullyQualifiedTypeName name="com.rays.Marksheet.MarksheetModal"/>
+    <fullyQualifiedTypeName name="javax.naming.directory.SearchControls"/>
+    <fullyQualifiedTypeName name="com.rays.Marksheet.MarksheetBean"/>
+    <fullyQualifiedTypeName name="java.lang.UnknownError"/>
+    <fullyQualifiedTypeName name="com.rays.user.UserModel"/>
+    <fullyQualifiedTypeName name="java.lang.Iterable"/>
+    <fullyQualifiedTypeName name="com.rays.user.UserBean"/>
+    <fullyQualifiedTypeName name="java.sql.DriverManager"/>
+    <fullyQualifiedTypeName name="com.rays.dynamic.role.RoleBean"/>
+    <fullyQualifiedTypeName name="com.rays.role.RoleModel"/>
+    <fullyQualifiedTypeName name="com.rays.role.RoleBean"/>
+    <fullyQualifiedTypeName name="com.mchange.v2.c3p0.ComboPooledDataSource"/>
+    <fullyQualifiedTypeName name="com.rays.jdbc.util.TestJDBCDataSource"/>
+    <fullyQualifiedTypeName name="com.rays.jdbc.util.JDBCDataSource"/>
+    <fullyQualifiedTypeName name="java.sql.Connection"/>
+    <fullyQualifiedTypeName name="com.rays.student.StudentModel"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="java.lang.StringBuffer"/>
+    <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
+    <fullyQualifiedTypeName name="java.sql.Date"/>
+    <fullyQualifiedTypeName name="java.sql.ResultSet"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.util.Iterator"/>
+    <fullyQualifiedTypeName name="com.rays.student.StudentBean"/>
+    <fullyQualifiedTypeName name="java.lang.Exception"/>
+    <fullyQualifiedTypeName name="in.com.rays.util.JDBCDataSource"/>
+    <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
+    <fullyQualifiedTypeName name="java.sql.Timestamp"/>
+    <fullyQualifiedTypeName name="java.util.Date"/>
+    <fullyQualifiedTypeName name="javax.servlet.http.HttpServlet"/>
+    <fullyQualifiedTypeName name="javax.servlet.annotation.WebServlet"/>
+    <fullyQualifiedTypeName name="in.co.rays.model.UserModel"/>
+    <fullyQualifiedTypeName name="in.co.rays.bean.UserBean"/>
+    <fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
+</qualifiedTypeNameHistroy>

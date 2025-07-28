@@ -1,9 +1,0 @@
-package com.rays.role;
-
-public class TestRoleModel {
-
-	public static void main(String[] args) {
-
-	}
-
-}
