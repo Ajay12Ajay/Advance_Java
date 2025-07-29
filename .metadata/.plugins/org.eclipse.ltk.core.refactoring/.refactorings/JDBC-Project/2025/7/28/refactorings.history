@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename type &apos;com.rays.Marksheet.Marksheet&apos; to &apos;MarksheetBean&apos;&#x0D;&#x0A;- Original project: &apos;JDBC-Project&apos;&#x0D;&#x0A;- Original element: &apos;com.rays.Marksheet.Marksheet&apos;&#x0D;&#x0A;- Renamed element: &apos;com.rays.Marksheet.MarksheetBean&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Marksheet&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;com.rays.Marksheet{Marksheet.java[Marksheet" matchStrategy="1" name="MarksheetBean" qualified="false" references="true" similarDeclarations="false" stamp="1752310937956" textual="false" version="1.0"/>
-</session>

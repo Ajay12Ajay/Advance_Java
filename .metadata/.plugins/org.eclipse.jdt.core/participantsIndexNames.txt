@@ -1,5 +1,0 @@
-INDEX VERSION 1.131
-H:\RAYS TECHNOLOGIES\Advance_Java\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1144249936.index
-\Advance_Web_Project\src
-H:\RAYS TECHNOLOGIES\Advance_Java\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2708355577.index
-\Advance_Web_Project\src
