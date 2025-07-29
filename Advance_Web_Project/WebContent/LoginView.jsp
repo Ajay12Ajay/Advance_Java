@@ -8,9 +8,10 @@
 </head>
 <body>
 	<%@ include file="Header.jsp"%>
-	<hr>
+	
 
 	<%
+		String success = (String) request.getAttribute("success");
 		String error = (String) request.getAttribute("error");
 	%>
 
@@ -22,6 +23,17 @@
 		%>
 		<h3>
 			<font color="red"><%=error%></font>
+		</h3>
+
+		<%
+			}
+		%>
+
+		<%
+			if (success != null) {
+		%>
+		<h3>
+			<font color="green"><%=success%></font>
 		</h3>
 
 		<%
