@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>User List View</title>
 </head>
 <body>
 
@@ -14,6 +14,8 @@
 
 	<%
 		int pageNo = (int) request.getAttribute("pageNo");
+
+		int index = ((pageNo - 1) * 5) + 1;
 		List list = (List) request.getAttribute("list");
 		Iterator it = list.iterator();
 	%>
@@ -44,6 +46,7 @@
 
 		<table border="1%" style="width: 100%">
 			<tr style="background: gray;">
+				<th>Select</th>
 				<th>Sr No</th>
 				<th>First Name</th>
 				<th>Last Name</th>
@@ -61,14 +64,15 @@
 			%>
 
 			<tr align="center">
-				<td><%=bean.getId()%></td>
+				<td><input type="checkbox" name="ids" value="<%=bean.getId()%>"></td>
+				<td><%=index++%></td>
 				<td><%=bean.getFirstName()%></td>
 				<td><%=bean.getLastName()%></td>
 				<td><%=bean.getLoginId()%></td>
 				<td><%=bean.getPassword()%></td>
 				<td><%=bean.getDob()%></td>
 				<td><%=bean.getAddress()%></td>
-				<td><a href="#">edit</a></td>
+				<td><a href="UserCtl?id=<%=bean.getId()%>">edit</a></td>
 			</tr>
 
 			<%

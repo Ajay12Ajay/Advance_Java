@@ -53,31 +53,43 @@ public class UserListCtl extends HttpServlet {
 
 		String op = req.getParameter("operation");
 
+		String[] ids = req.getParameterValues("ids");
+
 		pageNo = Integer.parseInt(req.getParameter("pageNo"));
 
 		UserModel model = new UserModel();
 
-		if (op.equalsIgnoreCase("next")) {
-			pageNo++;
-		}
-
-		if (op.equalsIgnoreCase("previous")) {
-			pageNo--;
-		}
-
-		if (op.equalsIgnoreCase("search")) {
-			pageNo = 1;
-			bean = new UserBean();
-			bean.setFirstName(req.getParameter("firstName"));
-			try {
-				bean.setDob(sdf.parse(req.getParameter("dob")));
-			} catch (ParseException e) {
-
-				e.printStackTrace();
+		try {
+			if (op.equalsIgnoreCase("next")) {
+				pageNo++;
 			}
 
-		}
-		try {
+			if (op.equalsIgnoreCase("previous")) {
+				pageNo--;
+			}
+
+			if (op.equalsIgnoreCase("search")) {
+				pageNo = 1;
+				bean = new UserBean();
+
+				bean.setFirstName(req.getParameter("firstName"));
+
+				bean.setDob(sdf.parse(req.getParameter("dob")));
+
+			}
+
+			if (op.equalsIgnoreCase("delete")) {
+				pageNo = 1;
+				if (ids != null && ids.length > 0) {
+					for (String id : ids) {
+
+						model.delete(Integer.parseInt(id));
+
+					}
+				}
+
+			}
+
 			List list = model.search(bean, pageNo, pageSize);
 
 			req.setAttribute("list", list);
