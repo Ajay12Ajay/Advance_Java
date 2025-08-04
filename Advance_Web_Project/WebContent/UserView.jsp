@@ -1,3 +1,4 @@
+<%@page import="java.text.SimpleDateFormat"%>
 <%@page import="in.co.rays.bean.UserBean"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -14,6 +15,7 @@
 
 
 	<%
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		String success = (String) request.getAttribute("success");
 		String error = (String) request.getAttribute("error");
 	%>
@@ -27,7 +29,7 @@
 		<%
 			if (bean != null && bean.getId() > 0) {
 		%>
-		<h1>Update User</h1>
+		<h1 align="center">Update User</h1>
 		<%
 			} else {
 		%>
@@ -62,6 +64,10 @@
 
 			<table>
 				<tr>
+					<input type="hidden" name="id"
+						value="<%=(bean != null) ? bean.getId() : ""%>">
+				</tr>
+				<tr>
 					<th>First Name</th>
 					<td><input type="text" name="firstName"
 						value="<%=(bean != null) ? bean.getFirstName() : ""%>"></td>
@@ -84,7 +90,7 @@
 				<tr>
 					<th>DOB</th>
 					<td><input type="date" name="dob"
-						value="<%=(bean != null) ? bean.getDob() : ""%>"></td>
+						value="<%=(bean != null) ? sdf.format(bean.getDob()) : ""%>"></td>
 				</tr>
 				<tr>
 					<th>Address</th>

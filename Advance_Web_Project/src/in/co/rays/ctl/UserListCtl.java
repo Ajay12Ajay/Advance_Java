@@ -74,8 +74,15 @@ public class UserListCtl extends HttpServlet {
 
 				bean.setFirstName(req.getParameter("firstName"));
 
-				bean.setDob(sdf.parse(req.getParameter("dob")));
+				if (req.getParameter("dob") != "") {
+					bean.setDob(sdf.parse(req.getParameter("dob")));
+				}
 
+			}
+
+			if (op.equalsIgnoreCase("add")) {
+				resp.sendRedirect("UserCtl");
+				return;
 			}
 
 			if (op.equalsIgnoreCase("delete")) {
@@ -85,12 +92,20 @@ public class UserListCtl extends HttpServlet {
 
 						model.delete(Integer.parseInt(id));
 
+						req.setAttribute("success", "successfully deleted...!");
+
 					}
+				} else {
+					req.setAttribute("error", "select atleast one checkbox......!");
 				}
 
 			}
 
 			List list = model.search(bean, pageNo, pageSize);
+
+			if (list.size() == 0) {
+				req.setAttribute("error", "No record found..!!");
+			}
 
 			req.setAttribute("list", list);
 			req.setAttribute("pageNo", pageNo);

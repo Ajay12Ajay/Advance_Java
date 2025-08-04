@@ -13,9 +13,12 @@
 
 
 	<%
-		int pageNo = (int) request.getAttribute("pageNo");
+		String success = (String) request.getAttribute("success");
+		String error = (String) request.getAttribute("error");
 
+		int pageNo = (int) request.getAttribute("pageNo");
 		int index = ((pageNo - 1) * 5) + 1;
+
 		List list = (List) request.getAttribute("list");
 		Iterator it = list.iterator();
 	%>
@@ -26,6 +29,28 @@
 
 		<div align="center">
 			<h1>User List</h1>
+
+			<%
+				if (success != null) {
+			%>
+			<h3>
+				<font color="green"><%=success%></font>
+			</h3>
+
+			<%
+				}
+			%>
+
+			<%
+				if (error != null) {
+			%>
+			<h3>
+				<font color="red"><%=error%></font>
+			</h3>
+
+			<%
+				}
+			%>
 		</div>
 
 
