@@ -49,7 +49,15 @@ public class LoginCtl extends HttpServlet {
 
 					HttpSession session = req.getSession();
 					session.setAttribute("user", bean);
-					resp.sendRedirect("WelcomeCtl");
+
+					String uri = req.getParameter("uri");
+
+					if (uri.equalsIgnoreCase("null")) {
+						resp.sendRedirect("WelcomeCtl");
+
+					} else {
+						resp.sendRedirect(uri);
+					}
 
 				} else {
 					req.setAttribute("error", "Login & Password Invalid");

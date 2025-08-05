@@ -8,9 +8,10 @@
 </head>
 <body>
 	<%@ include file="Header.jsp"%>
-	
+
 
 	<%
+		String uri = (String) request.getAttribute("uri");
 		String success = (String) request.getAttribute("success");
 		String error = (String) request.getAttribute("error");
 	%>
@@ -55,6 +56,10 @@
 					<td><input type="submit" value="signUp" name="operation"></td>
 				</tr>
 			</table>
+
+			<input type="text" name="uri" value="<%=uri%>">
+
+
 		</form>
 	</div>
 

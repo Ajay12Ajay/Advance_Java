@@ -25,7 +25,7 @@
 
 	<%@ include file="Header.jsp"%>
 
-	<form action="UserListCtl" method="post">
+	<form action="UserListCtl.do" method="post">
 
 		<div align="center">
 			<h1>User List</h1>
@@ -97,7 +97,7 @@
 				<td><%=bean.getPassword()%></td>
 				<td><%=bean.getDob()%></td>
 				<td><%=bean.getAddress()%></td>
-				<td><a href="UserCtl?id=<%=bean.getId()%>">edit</a></td>
+				<td><a href="UserCtl.do?id=<%=bean.getId()%>">edit</a></td>
 			</tr>
 
 			<%
